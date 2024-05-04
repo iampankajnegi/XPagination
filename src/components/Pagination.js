@@ -68,7 +68,7 @@ const handleNext=()=>{
          </tbody>
         </table>
        </div>
-        <button className='pervious' onClick={handlePervious} disabled ={currentPage === 1}>Pervious</button>
+        <button className='pervious' onClick={handlePervious} disabled ={currentPage === 1}>Previous</button>
         <button className='next' onClick={handleNext} disabled = {currentPage === totalPage}>Next</button>
     </div>
   )
