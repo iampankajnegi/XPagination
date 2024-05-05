@@ -52,7 +52,7 @@ const handleNext=()=>{
   return (
     <div>
         <h1>Employee Data Table</h1>
-       
+        {error && <div className="alert">{error}</div>}
        <div className="table-container">
         <table className="table">
             <thead className='table-header'>
