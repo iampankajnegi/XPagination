@@ -8,7 +8,7 @@ const PaginationData = () => {
     let [currentPage , setCurrentPage] = useState(1)
     let itemPerPage = 10
     let totalPage = Math.ceil(data.length / itemPerPage)
-    const [error, setError] = useState(null);
+    
 
 
  useEffect(()=>{
@@ -24,7 +24,8 @@ const PaginationData = () => {
        
       }
       catch(error){
-        setError( error.message);
+        
+        alert("failed to fetch data",error)
       }
     }
       
@@ -52,7 +53,7 @@ const handleNext=()=>{
   return (
     <div>
         <h1>Employee Data Table</h1>
-        {error && <div className="alert">{error}</div>}
+      
        <div className="table-container">
         <table className="table">
             <thead className='table-header'>
