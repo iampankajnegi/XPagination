@@ -8,16 +8,26 @@ const PaginationData = () => {
     let [currentPage , setCurrentPage] = useState(1)
     let itemPerPage = 10
     let totalPage = Math.ceil(data.length / itemPerPage)
+    const [error, setError] = useState(null);
 
 
  useEffect(()=>{
        
        const getData = async () => {
+        
+        try{
             let response = await axios.get("https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json")          
             let data = response.data
             setData(data)
             console.log("data", data)
-       }
+       
+       
+      }
+      catch(error){
+        setError("failed to fetch data" , error)
+      }
+    }
+      
        getData();
  },[])
 
